@@ -161,7 +161,7 @@ func fetchCniType(id string, client *containerengine.ContainerEngineClient) (str
 		case containerengine.OciVcnIpNativeClusterPodNetworkOptionDetails:
 			return string(containerengine.ClusterPodNetworkOptionDetailsCniTypeOciVcnIpNative), nil
 		default:
-			return "", fmt.Errorf("unsupported CNI found in Cluster : %v", n)
+			return string(containerengine.ClusterPodNetworkOptionDetailsCniTypeFlannelOverlay), nil
 		}
 	}
 
